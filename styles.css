@@ -16,14 +16,14 @@ input {
     height: 54px;
     width: 80%;
     border-radius: 8px;
-    border: 1px solid #383737;
+    border: 1px solid #756767;
     outline: none;
 }
 
 button {
     width: 80%;
     height: 54px;
-    background-color: dodgerblue;
+    background-color: #3578E5;
 
     color: white;
     font-size: 18px;
@@ -32,5 +32,9 @@ button {
 }
 
 button:hover {
-    background-color: navy;
+    background-color: #286ee0;
+}
+
+.input-error {
+    border-color: red;
 }
