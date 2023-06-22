@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <form class="formulario">
+        <img src="https://freelogopng.com/images/all_img/1658587303instagram-png.png" alt="Logo do instagram"
+            width="120px" />
+
+        <p>Cadastre-se para ver fotos e videos de seus amigo.</p>
+
+        <div class="input-area">
+            <input id="campo-nome-completo" type="text" placeholder="Nome Completo" />
+            <span id="error-nome" class="texto-erro" hidden></span>
+        </div>
+
+        <div class="input-area">
+            <input id="campo-email" type="text" placeholder="Email" />
+            <span id="error-email" class="texto-erro" hidden></span>
+        </div>
+
+        <div class="input-area">
+            <input id="campo-telefone" type="tel" placeholder="Telefone" />
+            <span id="error-telefone" class="texto-erro"></span>
+        </div>
+
+        <input type="text" placeholder="Nome do usuário" />
+
+        <div class="input-area">
+            <input id="campo-senha" type="password" placeholder="Senha" />
+            <span id="error-senha" class="texto-erro" hidden></span>
+        </div>
+
+        <button id="login-button" type="button" onclick="fazerCadastro()">Entrar</button>
+    </form>
+
+    <script src="scripts/cadastro.js"></script>
+</body>
+
+</html>
