@@ -25,10 +25,6 @@ function clicarNoBotao() {
         // redireciona para outra página
         window.location.href = "./feed.html";
     }
-
-    
-
-
 }
 
 
