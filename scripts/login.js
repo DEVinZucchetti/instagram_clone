@@ -22,7 +22,6 @@ function clicarNoBotao() {
         document.getElementById('login-button').disabled = true
         document.getElementById('login-button').style.opacity = 0.5
         document.getElementById('login-button').innerText = "Logando ..." 
-        
         // redireciona para outra página
         window.location.href = "./feed.html";
     }

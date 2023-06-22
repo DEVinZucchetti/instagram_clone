@@ -12,6 +12,22 @@
   align-items: center;
 }
 
+.input-area {
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.input-area input {
+    width: 100%;
+}
+
+.texto-erro {
+    color: red;
+    margin: 4px;
+}
+
 input {
     height: 54px;
     width: 80%;
