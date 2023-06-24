@@ -53,3 +53,67 @@ button:hover {
 .input-error {
     border-color: red;
 }
+
+
+/* CSS DO FEED */
+
+body {
+    margin: 0
+}
+
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    background-color: #333;
+    color: #fff;
+    width: 200px;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    /* incluir padding e borda na largura total */
+    overflow-y: auto;
+    /* adicionar barra de rolagem apenas quando necessário */
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    background-color: #ece8e8;
+}
+
+.galeria-fotos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.grid-item {
+     /* Para 3 colunas, ajuste conforme necessário */
+    margin-bottom: 10px;
+  }
+
+.galeria-fotos img {
+   width: 350px;
+    object-fit: cover;
+  
+}
