@@ -99,3 +99,21 @@ body {
     padding: 20px;
     background-color: #ece8e8;
 }
+
+.galeria-fotos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.grid-item {
+     /* Para 3 colunas, ajuste conforme necessário */
+    margin-bottom: 10px;
+  }
+
+.galeria-fotos img {
+   width: 350px;
+    object-fit: cover;
+  
+}
