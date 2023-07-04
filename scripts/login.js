@@ -1,8 +1,6 @@
-const usuarios = [
-    { email: 'henrique@gmail.com', password: 'devinhouse123' },
-    { email: 'douglas@gmail.com', password: 'devinhouse321' },
-    { email: 'cavalcante@gmail.com', password: 'senha' }
-]
+import { usuarios } from "../constantes/usuarios.js"
+
+document.getElementById("login-button").addEventListener("click", clicarNoBotao);
 
 function clicarNoBotao() {
     const email = document.getElementById("campo-email").value
@@ -44,9 +42,6 @@ function clicarNoBotao() {
 
             alert("Usuário não foi encontrado")
         }
-
-
-
     }
 }
 
