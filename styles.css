@@ -1,5 +1,5 @@
 .formulario {
-  margin: 0 auto;
+  margin: 40px auto;
   width: 40%;
 
   border-radius: 4px;
@@ -9,6 +9,9 @@
   flex-direction: column;
   gap: 20px;
   align-items: center;
+
+  padding: 10px;
+
 }
 
 .input-area {
