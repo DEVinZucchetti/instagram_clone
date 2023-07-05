@@ -36,6 +36,12 @@ const urls = [
              const img = document.createElement('img')     // <img src="" />
              img.setAttribute('src', url)  // <img src="url" />
 
+          
+              // const a = document.createElement('a') // <a> </a>
+              // a.setAttribute('href', 'explorar.html') // <a href="explorar.html"> </a>
+              // a.innerHTML = 'Explore'
+              // <a href="explorar.html">Explore</a>
+             
              document.getElementById('lista').appendChild(img) 
         })
   }
