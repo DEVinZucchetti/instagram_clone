@@ -79,6 +79,8 @@ body {
     /* incluir padding e borda na largura total */
     overflow-y: auto;
     /* adicionar barra de rolagem apenas quando necessário */
+
+    position: fixed;
 }
 
 .sidebar ul {
@@ -101,6 +103,7 @@ body {
     flex: 1;
     padding: 20px;
     background-color: #ece8e8;
+    margin-left: 200px;
 }
 
 .galeria-fotos {
@@ -118,5 +121,29 @@ body {
 .galeria-fotos img {
    width: 350px;
     object-fit: cover;
-  
+}
+
+/* CSS  Explorar */
+
+.container-grid {
+    width: 80%;
+    /* width: calc(80% - 200px); */
+    margin: 0 auto;
+}
+
+.container-grid img {
+    width: 200px;
+}
+
+
+.container-grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-gap: 20px;
+    column-gap: 20px;
+}
+
+.container-grid-layout img {
+    width: 100%;
+    height: auto;
 }
