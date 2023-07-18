@@ -1,31 +1,45 @@
 import { usuarios } from "../constantes/usuarios.js"
 
-document.getElementById("login-button").addEventListener("click", clicarNoBotao);
+document.getElementById("form-login").addEventListener("submit", realizarLogin);
 
-function clicarNoBotao() {
-    const email = document.getElementById("campo-email").value
-    const senha = document.getElementById("campo-senha").value
 
-    document.getElementById('campo-email').classList.remove("input-error")
-    document.getElementById('campo-senha').classList.remove("input-error")
+document.getElementById("aceitar").addEventListener("click", salvarDecisao);
+document.getElementById("rejeitar").addEventListener("click", salvarDecisao);
+
+function salvarDecisao() {
+    localStorage.setItem("decisao-permissao", 'ok')
+    document.getElementById('modal-permission').style.display = 'none'
+   
+}
+
+const campoEmail = document.getElementById("campo-email")
+const campoSenha = document.getElementById("campo-senha")
+const loginButton = document.getElementById('login-button')
+
+function resetForm() {
+    campoEmail.classList.remove("input-error")
+    campoEmail.classList.remove("input-error")
+}
+
+function realizarLogin(event) {
+    event.preventDefault()
+    
+    const email = campoEmail.value
+    const senha = campoSenha.value
+
+    resetForm()
 
     if (email === "") {
-        /* adiciona um estilo inline */
-        // document.getElementById('campo-email').style = "border-color: red"
-
-        /* adiciona um estilo direto no objeto */
-        // document.getElementById('campo-email').style.backgroundColor = 'red'
-
-        document.getElementById('campo-email').classList.add("input-error")
-        document.getElementById('campo-email').focus()
+        campoEmail.classList.add("input-error")
+        campoEmail.focus()
     } else if (senha === "") {
-        document.getElementById('campo-senha').classList.add("input-error")
-        document.getElementById('campo-email').focus()
+        campoSenha.classList.add("input-error")
+        campoSenha.focus()
     } else {
      
-        document.getElementById('login-button').disabled = true
-        document.getElementById('login-button').style.opacity = 0.5
-        document.getElementById('login-button').innerText = "Logando ..."
+        loginButton.disabled = true
+        loginButton.style.opacity = 0.5
+        loginButton.innerText = "Logando ..."
 
         const usuarioEncontrado = usuarios.find(
             usuario => usuario.email === email && usuario.password === senha
@@ -33,16 +47,39 @@ function clicarNoBotao() {
 
         if (usuarioEncontrado) {
             // redireciona para outra página
-            window.location.href = "./home.html";
+            localStorage.setItem("nome_usuario", "joao")
+
+            campoEmail.style.display = 'none'
+            campoSenha.style.display = 'none'
+            loginButton.style.display = 'none'
+
+            document.getElementById("form-login").innerText = "Entrando ..."
+
+            setTimeout(() => {
+                window.location.href = "./home.html";
+            }, 3000)
+
         } else {
-            
-            document.getElementById('login-button').disabled = false
-            document.getElementById('login-button').style.opacity = 1
-            document.getElementById('login-button').innerText = "Entrar"
+
+            loginButton.disabled = false
+            loginButton.style.opacity = 1
+            loginButton.innerText = "Entrar"
 
             alert("Usuário não foi encontrado")
         }
     }
 }
+
+
+function exibirModal() {
+    const decisao = localStorage.getItem('decisao-permissao')
+
+    if(decisao !== 'ok') {
+        document.getElementById('modal-permission').style.display = 'flex'
+    } 
+   
+}
+
+setTimeout(exibirModal, 5000)
 
 
