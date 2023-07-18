@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
-    <title>Explorar</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
-
 </head>
 
 <body>
@@ -14,30 +15,25 @@
                 <li class="list">
                     <a href="home.html">Feed</a>
                     </a></li>
-                <li class="list active">
+                <li class="list">
                     <a href="explorar.html">Explore</a></li>
                 <li class="list">
                     <a href="#">Perfil</a></li>
-                    <li class="list">
+                    <li class="list active">
                         <a href="/chat.html">Chat</a></li>
                 <li class="list">
                     <a href="/index.html">Sair</a></li>
             </ul>
         </div>
-            <tbody>
-                <tr>
-                    <td></td>
-                </tr>
-            </tbody>
         <div class="content" id="conteudo">
-            <div class="container-grid" id="lista">
-
-            </div>
+            <div id="chat"></div>
+            <form id="chat-form">
+                <input id="messageInput" placeholder="Digite sua mensagem..." />
+            </form>
         </div>
-
     </div>
 
-    <script src="./scripts/explorar.js"></script>
+    <script src="./scripts/chat.js"></script>
 </body>
 
 </html>
