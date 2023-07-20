@@ -1,20 +1,18 @@
 import { usuarios } from "../constantes/usuarios.js"
 
+const campoEmail = document.getElementById("campo-email")
+const campoSenha = document.getElementById("campo-senha")
+const loginButton = document.getElementById('login-button')
+
 document.getElementById("form-login").addEventListener("submit", realizarLogin);
-
-
 document.getElementById("aceitar").addEventListener("click", salvarDecisao);
 document.getElementById("rejeitar").addEventListener("click", salvarDecisao);
+
 
 function salvarDecisao() {
     localStorage.setItem("decisao-permissao", 'ok')
     document.getElementById('modal-permission').style.display = 'none'
-   
 }
-
-const campoEmail = document.getElementById("campo-email")
-const campoSenha = document.getElementById("campo-senha")
-const loginButton = document.getElementById('login-button')
 
 function resetForm() {
     campoEmail.classList.remove("input-error")
@@ -23,7 +21,7 @@ function resetForm() {
 
 function realizarLogin(event) {
     event.preventDefault()
-    
+
     const email = campoEmail.value
     const senha = campoSenha.value
 
@@ -36,7 +34,7 @@ function realizarLogin(event) {
         campoSenha.classList.add("input-error")
         campoSenha.focus()
     } else {
-     
+
         loginButton.disabled = true
         loginButton.style.opacity = 0.5
         loginButton.innerText = "Logando ..."
@@ -70,16 +68,25 @@ function realizarLogin(event) {
     }
 }
 
-
 function exibirModal() {
     const decisao = localStorage.getItem('decisao-permissao')
 
-    if(decisao !== 'ok') {
+    if (decisao !== 'ok') {
         document.getElementById('modal-permission').style.display = 'flex'
-    } 
-   
+    }
 }
 
 setTimeout(exibirModal, 5000)
+
+function exibirData() {
+    const data = new Date().toTimeString()
+
+    const p = document.createElement('p')
+    p.innerHTML = data
+
+    document.getElementById('data').innerText = data
+}
+
+setInterval(exibirData, 1000)
 
 

@@ -1,11 +1,15 @@
-var regexTelefone = /^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$/;
-var regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+import { regexEmail, regexTelefone } from '../utils/regexs.js'
 
-function fazerCadastro() {
-    var nome = document.getElementById('campo-nome-completo').value
-    var senha = document.getElementById('campo-senha').value
-    var telefone = document.getElementById('campo-telefone').value
-    var email = document.getElementById('campo-email').value
+document.getElementById('form-cadastro').addEventListener('submit', fazerCadastro)
+
+function fazerCadastro(event) {
+
+    event.preventDefault()
+
+    const nome = document.getElementById('campo-nome-completo').value
+    const senha = document.getElementById('campo-senha').value
+    const telefone = document.getElementById('campo-telefone').value
+    const email = document.getElementById('campo-email').value
 
     document.getElementById('campo-nome-completo').classList.remove("input-error")
     document.getElementById('error-nome').hidden = true
